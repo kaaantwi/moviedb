@@ -1,30 +1,76 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="main-body">
+    <nav class="header">
+      <p>🎬 The Movie Search App</p>
+    </nav>
+    <router-view />
+    <figure class="bg-image">
+      <img src="./assets/new-york.png" alt="" />
+    </figure>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+.main-body {
+  background: #242222;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-image: url("./assets/new-york.png"); */
+  /* background-repeat: no-repeat;
+  background-position: bottom; */
+  /* height: 100vh; */
+  /* overflow: scroll; */
+  /* border: #242222 1px solid red; */
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.header {
+  background: #313030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.header p {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}
+.bg-image {
+  position: fixed;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.bg-image img {
+  width: 100%;
+}
+
+main {
+  background: #242222;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 18px 0;
+  }
+  .header p {
+    font-size: 12px;
+  }
 }
 </style>
